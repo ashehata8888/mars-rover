@@ -1,14 +1,17 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Input from "./components"
+import Input from "./components/Input"
+import RoverReport from "./components/RoverReport";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Mars Rover</h1>
-        <Input/>
-      </header>
+     <h1 className="App-header">
+     Mars Rover
+      </h1>        
+
+      <Input/>
+      <RoverReport/>
     </div>
   );
 }
