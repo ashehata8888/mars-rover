@@ -8,47 +8,53 @@ import {useState , useEffect} from 'react';
 function App() {
   const [x,setX] = useState(4)
   const [y, setY] = useState(2);
-  const [direction, setDirection] = useState("East");
+  const [directionU, setDirectionU] = useState("East");
   const [currE , setCurrE] = useState(0)
   const [currN , setCurrN] = useState(0)
   const [currW , setCurrW] = useState(0)
   const [currS , setCurrS] = useState(0)
 
-  const [currX, setCurrX]= useState(0)
-  const [currY, setCurrY]= useState(0)
 
-  useEffect(()=>{
-   if(currE > 0) {
-    setDirection("East")
-    console.log("test CurrE ",currE)
-   } 
-  },[currE])
+
+
+//   useEffect(()=>{
+// if(currX > 0 ){
+//   setX(currX)
+// }
+//   },[currX])
+
+  // useEffect(()=>{
+  //  if(currE > 0) {
+  //   setDirection("East")
+  //   console.log("test CurrE ",currE)
+  //  } 
+  // },[currE])
 
   
 
-  useEffect(()=>{
-    if(currN > 0){
-      setDirection("North")
-      console.log("test CurrN ",currN)
-    } 
+  // useEffect(()=>{
+  //   if(currN > 0){
+  //     setDirection("North")
+  //     console.log("test CurrN ",currN)
+  //   } 
      
-   },[currN])
-  //  console.log("test CurrN ",currN)
+  //  },[currN])
+  // //  console.log("test CurrN ",currN)
    
 
-   useEffect(()=>{
-    if(currW > 0){
-      setDirection("West")
-      console.log("test CurrW ",currW)
-    } 
-   },[currW])
+  //  useEffect(()=>{
+  //   if(currW > 0){
+  //     setDirection("West")
+  //     console.log("test CurrW ",currW)
+  //   } 
+  //  },[currW])
 
-   useEffect(()=>{
-    if(currS > 0){
-      setDirection("South") 
-    console.log("test CurrS ",currS)
-    }
-   },[currS])
+  //  useEffect(()=>{
+  //   if(currS > 0){
+  //     setDirection("South") 
+  //   console.log("test CurrS ",currS)
+  //   }
+  //  },[currS])
   
   return (
     <div className="App">
@@ -58,23 +64,22 @@ function App() {
 
       <Input 
       setX={setX}
-      setCurrX={setCurrX}
-      setCurrY={setCurrX}
       x={x}
       y={y}
       setY={setY}
-      direction={direction}
-      setCurrE={setCurrE}
-      setCurrN={setCurrN}
-      setCurrW={setCurrW}
-      setCurrS={setCurrS}
-      // setDirection={setDirection}
+      // direction={direction}
+      // setCurrE={setCurrE}
+      // setCurrN={setCurrN}
+      // setCurrW={setCurrW}
+      // setCurrS={setCurrS}
+      setDirectionU={setDirectionU}
       />
-      {console.log("direction "+direction)}
+      {console.log("direction from App "+directionU)}
+      {console.log("textX from App "+x)}
       <RoverReport
       x={x}
       y={y}
-      direction={direction}
+      direction={directionU}
       />
     </div>
   );
