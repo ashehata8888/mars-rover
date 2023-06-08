@@ -3,6 +3,17 @@ import "./RoverReport.css"
 import RoverImg from '../images/roverimg.png'
 
 export default function RoverReport ({x,y,direction}){
+//     const [xArr,setXArr]=useState([x])
+//     const [yArr,setYArr]=useState([y])
+//     const [dirArr,setDirArr]=useState([direction])
+
+//  if (x > 0 || y > 0 || direction != ""){
+//     xArr.push(x)
+//     yArr.push(y)
+//     dirArr.push(direction)
+//  }
+   
+    
 
     return (
         <>
@@ -16,17 +27,28 @@ export default function RoverReport ({x,y,direction}){
                 <div className="col-xs-4" style={{display: "inline-block",marginBottom:"5px"}}>
                     <div className="profile-overview" style={{marginRight:"10px"}}>
                         <p>X</p>
-                        <h4 style={{margin:"0"}}>( { x} ,</h4></div>
+                        <h4 style={{margin:"0"}}>( {
+                        //  xArr[xArr.length - 1]
+                         x
+                        } ,</h4></div>
                 </div>
                 <div className="col-xs-4" style={{display: "inline-block",marginBottom:"5px"}}>
                     <div className="profile-overview" style={{marginRight:"10px"}}>
                         <p>Y</p>
-                        <h4>{ y} )</h4></div>
+                        <h4>{
+                        //  yArr[yArr.length - 1]
+                        y
+                        } )</h4></div>
+                        
+                  
                 </div>
                 <div className="col-xs-4" style={{display: "inline-block",marginBottom:"5px"}}>
                     <div className="profile-overview" style={{marginRight:"10px"}}>
                         <p>DIRECTION</p>
-                        <h4>{direction}</h4></div>
+                        <h4>{ 
+                        // dirArr[dirArr.length - 1]
+                        direction
+                        }</h4></div>
                 </div>
             </div>
         </div>

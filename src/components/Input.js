@@ -6,10 +6,10 @@ export default function Input({ setDirectionU, setX, x, y, setY }) {
   const [direction, setDirection] = useState("East");
   const [fCurr, setFCurr] = useState(0);
 
-  const [currE, setCurrE] = useState(0);
-  const [currN, setCurrN] = useState(0);
-  const [currW, setCurrW] = useState(0);
-  const [currS, setCurrS] = useState(0);
+
+
+  const [goStatus,setgoStatus]=useState(true)
+  const [clearStatus,setClearStatus]=useState(true)
 
   useEffect(() => {
     let currDir = direction;
@@ -19,8 +19,11 @@ export default function Input({ setDirectionU, setX, x, y, setY }) {
 
 
   const onclickHandler = (e) => {
-   setX(4)
-   setY(2)
+    setgoStatus(false)
+    setX(4)
+    setY(2)
+    setDirectionU("East")
+  
     let cloneInput = [...inputValue];
     cloneInput = [...cloneInput, e.target.name];
 
@@ -29,6 +32,7 @@ export default function Input({ setDirectionU, setX, x, y, setY }) {
 
   let dir = "East";
   const onClickGo = () => {
+    setgoStatus(true)
   
     if (inputValue.length > 0) {
 
@@ -123,7 +127,7 @@ export default function Input({ setDirectionU, setX, x, y, setY }) {
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
       ></input>
-      <button onClick={onClickGo} className="btn btn-primary">
+      <button onClick={onClickGo} className="btn btn-primary" disabled={goStatus}>
         GO
       </button>
       <div>
@@ -174,10 +178,15 @@ export default function Input({ setDirectionU, setX, x, y, setY }) {
 
           <li>
             <button
+            disabled={inputValue.length > 0 ? false : true}
               style={{ margin: "3vh" }}
               name="R"
               onClick={() =>{
                 setInputValue("")
+                setX(4)
+                setY(2)
+                setDirectionU("East")
+                setgoStatus(true)
               } }
               className="btn btn-primary"
             >
