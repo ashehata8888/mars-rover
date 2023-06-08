@@ -16,12 +16,12 @@ export default function RoverReport ({x,y,direction}){
                 <div className="col-xs-4" style={{display: "inline-block",marginBottom:"5px"}}>
                     <div className="profile-overview" style={{marginRight:"10px"}}>
                         <p>X</p>
-                        <h4 style={{margin:"0"}}>( {x} ,</h4></div>
+                        <h4 style={{margin:"0"}}>( { x} ,</h4></div>
                 </div>
                 <div className="col-xs-4" style={{display: "inline-block",marginBottom:"5px"}}>
                     <div className="profile-overview" style={{marginRight:"10px"}}>
                         <p>Y</p>
-                        <h4>{y} )</h4></div>
+                        <h4>{ y} )</h4></div>
                 </div>
                 <div className="col-xs-4" style={{display: "inline-block",marginBottom:"5px"}}>
                     <div className="profile-overview" style={{marginRight:"10px"}}>
